@@ -1,0 +1,33 @@
+<div *ngIf="addModalStatus| async">
+  <app-modal [modalStatus]="addModalStatus"></app-modal>
+</div>
+<div *ngIf="updateModalStatus | async">
+  <app-modal [inputQuote]="modalQuote" [modalStatus]="updateModalStatus"></app-modal>
+</div>
+<div class="quote-container">
+
+  <div class="title-wrapper">
+    <div class="text">
+      <p>STAR</p>
+      <p>WARS</p>
+    </div>
+  </div>
+
+  <div class="quote-wrapper" *ngIf="currentQuote">
+    <p class="quote">{{currentQuote.quote.toLowerCase()}}</p>
+    <p class="owner">{{currentQuote.source}}</p>
+    <p class="reference-date">{{currentQuote.id}}</p>
+  </div>
+
+  <div class="actions-wrapper">
+    <p class="jedi-color" (click)="addQuote()"><i class="fas fa-plus-square"></i></p>
+    <p class="force-color" (click)="updatedQuote()"><i class="fas fa-pencil-alt"></i></p>
+    <p class="sith-color" (click)="deleteQuote()"><i class="fas fa-trash-alt"></i></p>
+  </div>
+
+  <div class="button-wrapper">
+    <button class="button sith-button" (click)="prevQuote()">Prev</button>
+    <button class="button force-button" (click)="getRandomQuote()">Random</button>
+    <button class="button jedi-button" (click)="nextQuote()">Next</button>
+  </div>
+</div>

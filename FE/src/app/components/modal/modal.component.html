@@ -1,0 +1,14 @@
+<div class="modal-container">
+  <form>
+    <label>Quote</label>
+    <textarea rows="4" cols="50" type="text" name="quote" [(ngModel)]="modalQuote.quote"></textarea>
+
+    <label>Source</label>
+    <input type="text" name="owner" [(ngModel)]="modalQuote.source">
+
+    <button type="submit" *ngIf="inputQuote" (click)="update($event)">update</button>
+    <button type="submit" *ngIf="!inputQuote" (click)="save($event)">save</button>
+    <button type="button" (click)="cancel()">Close</button>
+
+  </form>
+</div>

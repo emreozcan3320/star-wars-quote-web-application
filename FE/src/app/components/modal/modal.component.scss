@@ -1,0 +1,82 @@
+@font-face {
+  font-family: "StarWars";
+  src: url("src/assets/fonts/Starjedi.ttf");
+}
+
+.modal-container {
+  position: absolute;
+  z-index: 99;
+  left: 0;
+  right: 0;
+
+  margin: 10vh auto;
+  height: 50vh;
+  width: 50vw;
+  background: white;
+  border-radius: 25px;
+  border: 4px solid #ffd54e;
+  background: #080808;
+
+
+  form {
+    display: flex;
+    flex-direction: column;
+    padding: 30px 50px 50px 50px;
+    color: white;
+
+    textarea {
+      border-radius: 15px;
+      resize: none;
+      padding: 20px;
+      font-size: 13px;
+      font-family: StarWars;
+      letter-spacing: 1px;
+    }
+
+    label {
+      margin-top: 10px;
+      color: #ffd54e;
+      font-size: 15px;
+
+      &:first-of-type {
+        margin-top: 0;
+      }
+    }
+
+    input[type=text] {
+      border-radius: 15px;
+      border: none;
+      height: 30px;
+      padding-left: 20px;
+      padding-right: 20px;
+      font-size: 13px;
+      font-family: StarWars;
+      letter-spacing: 1px;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    button {
+      border-radius: 15px;
+      border: none;
+      margin-top: 20px;
+      padding-top: 10px;
+      padding-bottom: 15px;
+      background: transparent;
+      border: 4px solid #ffd54e;
+      color: #ffd54e;
+      font-family: StarWars;
+      font-size: 18px;
+      cursor: pointer;
+
+      &:nth-of-type(2) {
+        color: #df1200;
+        border: 4px solid #df1200;
+      }
+    }
+
+  }
+
+}

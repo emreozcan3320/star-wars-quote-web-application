@@ -1,0 +1,129 @@
+@font-face {
+  font-family: "StarWars";
+  src: url("../assets/fonts/Starjedi.ttf");
+}
+
+.quote-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  background-image: url("../assets/images/bg-stars.png");
+  background-size: cover;
+  font-family: STARWARS;
+
+  .title-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .text {
+      color: #000;
+      text-shadow: -2px -2px 0 #ffd54e, -2px -1px 0 #ffd54e, -2px 0 0 #ffd54e,
+      -2px 1px 0 #ffd54e, -2px 2px 0 #ffd54e, -1px -2px 0 #ffd54e,
+      -1px -1px 0 #ffd54e, -1px 0 0 #ffd54e, -1px 1px 0 #ffd54e,
+      -1px 2px 0 #ffd54e, 0 -2px 0 #ffd54e, 0 -1px 0 #ffd54e,
+      0 0 0 #ffd54e, 0 1px 0 #ffd54e, 0 2px 0 #ffd54e, 1px -2px 0 #ffd54e,
+      1px -1px 0 #ffd54e, 1px 0 0 #ffd54e, 1px 1px 0 #ffd54e,
+      1px 2px 0 #ffd54e, 2px -2px 0 #ffd54e, 2px -1px 0 #ffd54e,
+      2px 0 0 #ffd54e, 2px 1px 0 #ffd54e, 2px 2px 0 #ffd54e;
+      font-size: 100px;
+      font-family: StarWars;
+      line-height: 0;
+      letter-spacing: normal;
+
+      p {
+        margin-top: 90px;
+        //margin-bottom: 40px;
+      }
+    }
+  }
+
+  .quote-wrapper {
+    font-family: Helvetica, Arial, sans-serif;
+    font-family: STARWARS;
+    font-size: 20px;
+    letter-spacing: 1px;
+    text-align: center;
+    margin: 10px 10px 25px 10px;
+    color: rgb(59, 173, 216);
+
+    p {
+      margin: 0;
+    }
+
+    .owner {
+      color: rgba(255, 255, 255, 0.8);
+      margin-top: 5vh;
+      font-size: 11px;
+      letter-spacing: 2px
+    }
+
+    .reference-date {
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 11px;
+      letter-spacing: 2px
+    }
+  }
+
+  .actions-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.8);
+    margin-left: 10px;
+    font-size: 25px;
+
+    p {
+      margin: 0 20px;
+      cursor: pointer;
+    }
+  }
+
+
+  .button-wrapper {
+    margin-top: 10px;
+
+    .button {
+      margin: 10px;
+      color: #ffd54e;
+      letter-spacing: 3px;
+      font-family: StarWars;
+      line-height: 1.1em;
+      padding: 10px 15px;
+      outline: 0;
+      border: 4px solid #ffd54e;
+      border-radius: 15px;
+      background: transparent;
+      text-shadow: none;
+      font-size: 20px;
+      cursor: pointer;
+      transition: box-shadow .3s ease-out, text-shadow .3s ease-out;
+
+      &.sith-button {
+        &:hover {
+          box-shadow: -1px 1px 8px #FF0D00, 1px -1px 8px #FF0D00, inset -3px -2px 8px #FF0D00, inset 2px 3px 8px #FF0D00;
+          text-shadow: -1px 1px 8px #FF0D00, 1px -1px 8px #FF0D00;
+        }
+      }
+
+      &.force-button {
+        &:hover {
+          box-shadow: -1px 1px 8px #BFA33B, 1px -1px 8px #BFA33B, inset -3px -2px 8px #BFA33B, inset 2px 3px 8px #BFA33B;
+          text-shadow: -1px 1px 8px #BFA33B, 1px -1px 8px #BFA33B;
+        }
+      }
+
+      &.jedi-button {
+        &:hover {
+          box-shadow: -1px 1px 8px #0055FF, 1px -1px 8px #0055FF, inset -3px -2px 8px #0055FF, inset 2px 3px 8px #0055FF;
+          text-shadow: -1px 1px 8px #0055FF, 1px -1px 8px #0055FF;
+        }
+      }
+    }
+  }
+}
+
+
