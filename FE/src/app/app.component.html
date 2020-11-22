@@ -16,7 +16,7 @@
   <div class="quote-wrapper" *ngIf="currentQuote">
     <p class="quote">{{currentQuote.quote.toLowerCase()}}</p>
     <p class="owner">{{currentQuote.source}}</p>
-    <p class="reference-date">{{currentQuote.id}}</p>
+    <p class="reference-date">{{currentQuote.date * 1000 | date}}</p>
   </div>
 
   <div class="actions-wrapper">

@@ -36,8 +36,8 @@ services:
       MYSQL_USER: 'root'
       MYSQL_PASSWORD: 'password'
       MYSQL_DATABASE: 'crud-application'
-#    ports:
-#      - 8080:8080 #Forwars the exposed port 8080 on the container to port 8080 on the host machine
+    ports:
+      - 8080:8080 #Forwars the exposed port 8080 on the container to port 8080 on the host machine
     links:
       - mysql-db
 
