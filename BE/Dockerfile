@@ -2,7 +2,7 @@
 FROM maven:3.6-openjdk-8-slim AS build
 COPY pom.xml /app/
 COPY src /app/src
-RUN mvn -f /app/pom.xml clean package
+RUN mvn -DskipTests -f /app/pom.xml clean package
 
 # Run Stage
 FROM openjdk:8-jre-alpine

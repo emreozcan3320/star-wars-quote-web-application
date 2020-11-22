@@ -3,11 +3,14 @@ import {HttpClient, HttpErrorResponse} from '@angular/common/http';
 import {Quote} from '../models/quote.model';
 import {Observable, throwError} from 'rxjs';
 import {catchError} from 'rxjs/operators';
+import {environment} from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class QuoteService {
+
+  private apiUrl = environment.apiUrl;
 
   constructor(
     private http: HttpClient
@@ -27,19 +30,19 @@ export class QuoteService {
   }
 
   public getAllQuotes(): Observable<Array<Quote>> {
-    return this.http.get<Array<Quote>>('http://localhost:8080/api/v1/quotes').pipe(catchError(QuoteService.handleError));
+    return this.http.get<Array<Quote>>(`${this.apiUrl}/quotes`).pipe(catchError(QuoteService.handleError));
   }
 
   public saveQuote(quote: Quote): Observable<Quote> {
-    return this.http.post<Quote>('http://localhost:8080/api/v1/quotes', quote).pipe(catchError(QuoteService.handleError));
+    return this.http.post<Quote>(`${this.apiUrl}/quotes`, quote).pipe(catchError(QuoteService.handleError));
   }
 
   public updateQuote(quoteId: number, quote: Quote): Observable<Quote> {
-    return this.http.put<Quote>(`http://localhost:8080/api/v1/quotes/${quoteId}`, quote).pipe(catchError(QuoteService.handleError));
+    return this.http.put<Quote>(`${this.apiUrl}/quotes/${quoteId}`, quote).pipe(catchError(QuoteService.handleError));
   }
 
   public delete(quoteId: number): Observable<Quote> {
-    return this.http.delete<Quote>(`http://localhost:8080/api/v1/quotes/${quoteId}`).pipe(catchError(QuoteService.handleError));
+    return this.http.delete<Quote>(`${this.apiUrl}/quotes/${quoteId}`).pipe(catchError(QuoteService.handleError));
   }
 }
 

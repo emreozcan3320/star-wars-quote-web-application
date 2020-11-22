@@ -36,8 +36,10 @@ services:
       MYSQL_USER: 'root'
       MYSQL_PASSWORD: 'password'
       MYSQL_DATABASE: 'crud-application'
-    ports:
-      - 8080:8080 #Forwars the exposed port 8080 on the container to port 8080 on the host machine
+#    ports:
+#      - 8080:8080 #Forwars the exposed port 8080 on the container to port 8080 on the host machine
+    links:
+      - mysql-db
 
   #Front-end Angular Application
   angular-app:
@@ -46,3 +48,5 @@ services:
     container_name: angular-app
     ports:
       - 4200:4200 #Forwars the exposed port 4200 on the container to port 4200 on the host machine
+    links:
+      - springboot-app
